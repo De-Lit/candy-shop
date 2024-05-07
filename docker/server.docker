@@ -1,0 +1,9 @@
+FROM golang:1.22.2
+
+WORKDIR /app
+
+COPY ./candy .
+
+RUN go build -o candy_server cmd/candyServer/candyServer.go
+
+CMD ["./candy_server"]
